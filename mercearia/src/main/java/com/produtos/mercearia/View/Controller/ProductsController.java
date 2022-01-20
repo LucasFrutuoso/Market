@@ -1,10 +1,10 @@
 package com.produtos.mercearia.View.Controller;
 
+import javax.validation.Valid;
 import com.produtos.mercearia.Service.ProductsService;
 import com.produtos.mercearia.Service.StorageService;
 import com.produtos.mercearia.Shared.ProductsDto;
 import com.produtos.mercearia.View.Model.ProductsResponse;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -34,7 +34,7 @@ public class ProductsController {
     }
 
     @PostMapping("/{id}/storage")
-    public ResponseEntity<?> register(@RequestBody ProductsDto productsDto, @PathVariable Long id) {
+    public ResponseEntity<?> register(@RequestBody @Valid ProductsDto productsDto, @PathVariable Long id) {
 
         ProductsResponse response = productsService.register(productsDto, id);
 

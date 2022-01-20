@@ -30,7 +30,7 @@ public class StorageController {
     }
 
     @PostMapping
-    public ResponseEntity<?> register(@RequestBody StorageDto storageDto){
+    public ResponseEntity<?> register(@RequestBody StorageDto storageDto) {
 
         StorageResponse response = storageService.register(storageDto);
 
@@ -38,7 +38,7 @@ public class StorageController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<?> modify(@PathVariable Long id, @RequestBody StorageDto storageDto){
+    public ResponseEntity<?> modify(@PathVariable Long id, @RequestBody StorageDto storageDto) {
 
         StorageResponse response = storageService.modify(storageDto, id);
 

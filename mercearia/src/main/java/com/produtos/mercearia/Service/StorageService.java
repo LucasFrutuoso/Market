@@ -13,6 +13,7 @@ public class StorageService {
     @Autowired
     private StorageRepository storageRepository;
 
+
     public StorageResponse byId(Long id){
 
         Storage storage = storageRepository.findById(id).orElse(null);
@@ -24,6 +25,7 @@ public class StorageService {
     public StorageResponse register(StorageDto storageDto){
 
         Storage storage = new Storage(storageDto);
+        
         storageRepository.save(storage);
 
         StorageResponse response = new StorageResponse(storage);
